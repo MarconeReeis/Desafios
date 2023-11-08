@@ -1,13 +1,53 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="fixed-div">
+    <ion-row>
+      <!-- Menu Button -->
+      <ion-col size="4">
+        <ion-buttons>
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+      </ion-col>
+
+      <!-- Logo -->
+      <ion-col size="4">
+        <ion-img src="assets/logo/logo_usina.png" alt="Logo"></ion-img>
+      </ion-col>
+
+      <!-- Notifications -->
+      <ion-col size="4">
+        <ion-button aria-label="Notifications">
+          <ion-icon name="notifications-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <!-- User Info -->
+    <ion-row>
+      <ion-col size="12">
+        <div class="user-info-wrapper">
+          <ion-avatar class="user-avatar">
+            <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="User avatar" />
+          </ion-avatar>
+          <div class="user-info">
+            <div class="user-title">Leonardo Santos</div>
+            <div class="user-subtitle">Nível Roxo</div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <div class="buttons-header">
+      <div class="button-container">
+        <ion-button fill="clear" class="button-action-header">
+          <ion-icon slot="start" name="body-outline"></ion-icon>
+          MEU CORPO
+        </ion-button>
+        <ion-button fill="clear" class="button-action-header">
+          <ion-icon slot="start" name="trophy-outline"></ion-icon>
+          OBJETIVOS E CONQUISTAS
+        </ion-button>
+      </div>
+    </div>
+
+  </div>
 </ion-content>
