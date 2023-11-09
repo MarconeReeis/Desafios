@@ -11,9 +11,9 @@ register();
 export class AppComponent {
 
   public appPages = [
-    { title: 'Home', url: '/home', icon: 'mail' },
-    { title: 'About', url: '/about', icon: 'paper-plane' },
-    { title: 'Contact', url: '/contact', icon: 'heart' },
+    { title: 'Home', url: '/home', icon: 'home' },
+    { title: 'Perfil', url: '/home', icon: 'person' },
+    { title: 'Treinos', url: '/home', icon: 'accessibility' },
   ];
 
   constructor() { }

@@ -30,18 +30,20 @@ ion-header {
         margin-right: 10px;
     }
 
-    .name-and-age {
+    .infos {
         display: flex;
         flex-direction: column;
-    }
 
-    .user-name {
-        font-weight: bold;
-        color: #ffffff;
-    }
-
-    .user-age {
-        color: #5b33c1;
+        .user-name {
+            font-weight: bold;
+            color: #ffffff;
+            font-family: 'Oswald', sans-serif;
+        }
+    
+        .user-nivel {
+            color: #5b33c1;
+            font-family: 'Oswald', sans-serif;
+        }
     }
 
     .buttons-header {
@@ -59,6 +61,7 @@ ion-header {
             .button-action-header {
                 font-size: 10px;
                 color: #f07d08;
+                font-family: 'Oswald', sans-serif;
 
                 ion-icon {
 

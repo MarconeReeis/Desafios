@@ -5,8 +5,7 @@
     </ion-buttons>
     <ion-buttons slot="primary">
       <ion-button>
-        <ion-badge slot="end">22</ion-badge>
-        <ion-icon name="notifications-sharp"></ion-icon>
+          <ion-icon name="notifications-sharp"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title>
@@ -18,11 +17,11 @@
 <div class="header-user">
   <div class="user-info">
     <ion-avatar>
-      <img [src]="infoUser.userImageUrl" alt="User Image"  />
+      <img [src]="infoUser[0].userImageUrl" alt="User Image"  />
     </ion-avatar>
-    <div class="name-and-age">
-      <div class="user-name">{{infoUser.userName}}</div>
-      <div class="user-age">Nivel {{infoUser.userNivel}}</div>
+    <div class="infos">
+      <div class="user-name">{{infoUser[0].userName}}</div>
+      <div class="user-nivel">Nivel {{infoUser[0].userNivel}}</div>
     </div>
   </div>
 

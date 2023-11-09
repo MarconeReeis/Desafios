@@ -17,6 +17,7 @@ ion-content {
                 h3 {
                     margin: 0px 5px 0px 0px !important;
                     margin-right: 5px;
+                    font-family: 'Oswald', sans-serif;
                 }
 
                 ion-icon {
@@ -26,9 +27,10 @@ ion-content {
                 }
 
                 .sub-title-novo {
+                    display: flex;
                     background-color: #f07d08;
                     border-radius: 40px;
-                    display: flex;
+                    font-family: 'Oswald', sans-serif;
 
                     span {
                         font-size: 8px;
@@ -67,6 +69,7 @@ ion-content {
 
                     .text {
                         text-align: start;
+                        font-family: 'Oswald', sans-serif;
                     }
 
                     .icon {
@@ -77,6 +80,26 @@ ion-content {
                             border-radius: 40px;
                             padding: 5px;
                         }
+                    }
+                }
+
+                .slide-bottom-text {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 10px;
+                    text-align-last: start;
+
+                    .title {
+                        font-family: 'Oswald', sans-serif;
+                        font-size: 0.8em;
+                        color: #f07d08;
+                    }
+
+                    .subtitle {
+                        font-family: 'Oswald', sans-serif;
+                        font-size: 1em;
+                        font-weight: bold;
+                        color: #ffffff;
                     }
                 }
 
