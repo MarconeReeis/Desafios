@@ -5,6 +5,7 @@
     </ion-buttons>
     <ion-buttons slot="primary">
       <ion-button>
+        <ion-badge slot="end">22</ion-badge>
         <ion-icon name="notifications-sharp"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -17,11 +18,11 @@
 <div class="header-user">
   <div class="user-info">
     <ion-avatar>
-      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      <img [src]="infoUser.userImageUrl" alt="User Image"  />
     </ion-avatar>
     <div class="name-and-age">
-      <div class="user-name">Nome do Usuário</div>
-      <div class="user-age">Idade</div>
+      <div class="user-name">{{infoUser.userName}}</div>
+      <div class="user-age">Nivel {{infoUser.userNivel}}</div>
     </div>
   </div>
 

@@ -11,17 +11,34 @@
       </div>
       <swiper-container space-between="30" slides-per-view="auto">
         <swiper-slide *ngFor="let i of swipersPersonal">
-          <ion-img [src]="i.image" [alt]="i.title"></ion-img>
+          <div class="slide-content">
+            <ion-img [src]="i.image" [alt]="i.title"></ion-img>
+            <div class="centered-text">
+              <div class="icon">
+                <ion-icon name="add"></ion-icon>
+              </div>
+              <div class="text">
+                <span>
+                  NOVO TREINO
+                </span>
+              </div>
+            </div>
+          </div>
         </swiper-slide>
       </swiper-container>
     </div>
 
+    <!---->
     <div class="swiper-container">
       <div class="swiper-title">
         <h3>
-          PERSONAL ONLINE
+          PROGRAMAS
         </h3>
-        <ion-icon name="add"></ion-icon>
+        <div class="sub-title-novo">
+          <span>
+            NOVO
+          </span>
+        </div>
       </div>
       <swiper-container space-between="30" slides-per-view="auto">
         <swiper-slide *ngFor="let i of swipersPersonal">
@@ -33,65 +50,14 @@
     <div class="swiper-container">
       <div class="swiper-title">
         <h3>
-          PERSONAL ONLINE
+          CONTEÚDOS
         </h3>
-        <ion-icon name="add"></ion-icon>
       </div>
       <swiper-container space-between="30" slides-per-view="auto">
-        <swiper-slide *ngFor="let i of swipersPersonal">
+        <swiper-slide *ngFor="let i of swiperContent">
           <ion-img [src]="i.image" [alt]="i.title"></ion-img>
         </swiper-slide>
       </swiper-container>
     </div>
   </div>
 </ion-content>
-
-<!--
-  <div class="fixed-div">
-    <ion-row>
-      <ion-col size="4">
-        <ion-buttons>
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-      </ion-col>
-
-      <ion-col size="4">
-        <ion-img src="assets/logo/logo_usina.png" alt="Logo"></ion-img>
-      </ion-col>
-
-      <ion-col size="4">
-        <ion-button aria-label="Notifications">
-          <ion-icon name="notifications-outline"></ion-icon>
-        </ion-button>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="12">
-        <div class="user-info-wrapper">
-          <ion-avatar class="user-avatar">
-            <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="User avatar" />
-          </ion-avatar>
-          <div class="user-info">
-            <div class="user-title">Leonardo Santos</div>
-            <div class="user-subtitle">Nível Roxo</div>
-          </div>
-        </div>
-      </ion-col>
-    </ion-row>
-
-    <div class="buttons-header">
-      <div class="button-container">
-        <ion-button fill="clear" class="button-action-header">
-          <ion-icon slot="start" name="body-outline"></ion-icon>
-          MEU CORPO
-        </ion-button>
-        <ion-button fill="clear" class="button-action-header">
-          <ion-icon slot="start" name="trophy-outline"></ion-icon>
-          OBJETIVOS E CONQUISTAS
-        </ion-button>
-      </div>
-    </div>
-
-  </div>
--->
