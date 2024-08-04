@@ -5,44 +5,36 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
 
-    header {
-        background-color: #333;
-        color: white;
-        padding: 1em;
-        text-align: center;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .button-container {
-            display: flex;
-            gap: 1em;
-            width: 100%;
-            justify-content: end;
-        }
-        
-        .button-container button {
-            background-color: #555;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            padding: 10px;
-        }
-        
-        .button-container button:hover {
-            background-color: #777;
-        }
-    }
+.button-container {
+    display: flex;
+    gap: 1em;
+    width: 100%;
+    justify-content: end;
+}
 
-    footer {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 1em;
-        width: 100%;
-    }
+.button-container button {
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.button-container button:hover {
+    background-color: #777;
 }
 
 main {
@@ -54,24 +46,52 @@ main {
     align-items: center;
 }
 
-table {
-    width: 80%;
-    border-collapse: collapse;
-    margin-top: 20px;
+.container {
+    max-width: 90%;
+    margin: 0 auto;
 }
 
-table, th, td {
+.search-container {
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    padding: 10px;
+    font-size: 16px;
     border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 th, td {
-    padding: 8px;
+    padding: 15px 70px;
     text-align: center;
+    border: none;
 }
 
 th {
     background-color: #333;
     color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
 }
 
 td button {
@@ -87,3 +107,10 @@ td button:hover {
     background-color: #777;
 }
 
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+}
