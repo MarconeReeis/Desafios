@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes - Sitcon</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="button-container">
+            <a href="index.html">
+                <button id="btn1">Solicitações de Clínicas</button>
+            </a>
+            <a href="index.html">
+                <button id="btn2">Listagem de Solicitações</button>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar pacientes...">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Data de Nascimento</th>
+                        <th>CPF</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="pagination-container" id="pagination">
+                <button id="prevPage" disabled>&laquo; Anterior</button>
+                <span id="pageInfo">1</span>
+                <button id="nextPage">Próxima &raquo;</button>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>Marcone Trajano dos Reis - 2024</p>
+    </footer>
+
+    <script src="js/buscar_pacientes.js"></script>
+</body>
+
+</html>

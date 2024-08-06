@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Paciente - Sitcon</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="button-container">
+            <a href="index.html">
+                <button id="btn1">Solicitações de Clínicas</button>
+            </a>
+            <a href="index.html">
+                <button id="btn2">Listagem de Solicitações</button>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <button id="back-button" class="back-button">Voltar</button>
+            <div class="details-container">
+                <div class="details-item">
+                    <label for="patientName">Nome do Paciente</label>
+                    <input disabled type="text" id="patientName" name="patientName">
+                </div>
+                <div class="details-item">
+                    <label for="patientDate">Data de Nascimento</label>
+                    <input disabled type="text" id="patientDate" name="patientDate">
+                </div>
+                <div class="details-item">
+                    <label for="patientCpf">CPF</label>
+                    <input disabled type="text" id="patientCpf" name="patientCpf">
+                </div>
+            </div>
+
+            <div class="details-warning">
+                <p><b>Atenção!</b> Os Campos com * devem ser preenchidos obrigatoriamente.</p>
+            </div>
+
+            <div class="details-item-select">
+                <label for="professional">Profissional*</label>
+                <select id="professional" name="professional">
+                    <option value="prof1">Profissional 1</option>
+                    <option value="prof2">Profissional 2</option>
+                    <option value="prof3">Profissional 3</option>
+                </select>
+            </div>
+
+            <div class="details-container-solicitation">
+                <div class="details-item-select">
+                    <label for="solicitationType">Tipo de solicitação*</label>
+                    <select id="solicitationType" name="solicitationType">
+                    </select>
+                </div>
+                <div class="details-item-select">
+                    <label for="procedures">Procedimentos*</label>
+                    <select id="procedures" name="procedures">
+                    </select>
+                </div>                
+            </div>
+
+            <div class="details-container">
+                <div class="details-item">
+                    <label for="patDate">Data*</label>
+                    <input type="date" id="patDate" name="patDate">
+                </div>
+                <div class="details-item">
+                    <label for="patientHora">Hora*</label>
+                    <input type="time" id="patientHora" name="patientHora">
+                </div>
+            </div>
+
+            <div class="save-button-container">
+                <button id="save-button" class="save-button">Salvar</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Marcone Trajano dos Reis - 2024</p>
+    </footer>
+
+    <script src="js/detalhes.js"></script>
+</body>
+</html>
