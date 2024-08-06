@@ -1,8 +1,17 @@
+let allPatients = [];
+
+function savePatientDetails(patientId) {
+    const patient = allPatients.find(p => p.id === patientId);
+    if (patient) {
+        localStorage.setItem('selectedPatient', JSON.stringify(patient));
+        window.location.href = 'detalhes.html';
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const apiUrlBase = 'http://localhost:8000/index.php?page=';
     let currentPage = 1;
     const totalPages = 2;
-    let allPatients = [];
 
     async function fetchPatients(page) {
         try {
@@ -43,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td>${nome}</td>
                 <td>${dataNascimento}</td>
                 <td>${cpf}</td>
-                <td><button>Prosseguir</button></td>
+                <td><button onclick="savePatientDetails(${patient.id})">Prosseguir</button></td>
             `;
 
             tableBody.appendChild(row);
