@@ -9,13 +9,11 @@ function savePatientDetails(patientId) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const apiUrlBase = 'http://localhost:8000/index.php?page=';
-    let currentPage = 1;
-    const totalPages = 2;
+    const apiUrl = 'http://localhost:8000/index.php?endpoint=pacientes';
 
-    async function fetchPatients(page) {
+    async function fetchPatients() {
         try {
-            const response = await fetch(apiUrlBase + page);
+            const response = await fetch(apiUrl);
             if (!response.ok) {
                 throw new Error('Erro ao buscar pacientes');
             }
@@ -26,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
             allPatients = data;
 
             populateTable(allPatients);
-            updatePagination();
         } catch (error) {
             console.error('Erro:', error);
         }
@@ -77,34 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
         populateTable(filteredPatients);
     }
 
-    function updatePagination() {
-        const prevButton = document.getElementById('prevPage');
-        const nextButton = document.getElementById('nextPage');
-        const pageInfo = document.getElementById('pageInfo');
-
-        pageInfo.textContent = currentPage;
-
-        prevButton.disabled = currentPage === 1;
-        nextButton.disabled = currentPage === totalPages;
-    }
-
-    function handlePageChange(direction) {
-        if (direction === 'prev' && currentPage > 1) {
-            currentPage--;
-            fetchPatients(currentPage);
-        } else if (direction === 'next' && currentPage < totalPages) {
-            currentPage++;
-            fetchPatients(currentPage);
-        }
-    }
-
     document.getElementById('searchInput').addEventListener('input', (event) => {
         const searchTerm = event.target.value;
         filterPatients(searchTerm);
     });
 
-    document.getElementById('prevPage').addEventListener('click', () => handlePageChange('prev'));
-    document.getElementById('nextPage').addEventListener('click', () => handlePageChange('next'));
-
-    fetchPatients(currentPage);
+    fetchPatients();
 });

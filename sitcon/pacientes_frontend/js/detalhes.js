@@ -1,29 +1,78 @@
 document.addEventListener("DOMContentLoaded", () => {
-    function formatDate(dateString) {
-        const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-        return new Date(dateString).toLocaleDateString(undefined, options);
+    const apiUrlProcedures = 'http://localhost:8000/index.php?endpoint=procedimentos';
+    const apiUrlTipoSolicitacao = 'http://localhost:8000/index.php?endpoint=tipoSolicitacao';
+    const apiUrlProfissionais = 'http://localhost:8000/index.php?endpoint=profissionais';
+
+    function populateSelect(selectElement, data, valueKey, textKey) {
+        selectElement.innerHTML = '';
+
+        if (Array.isArray(data) && data.length === 0) {
+            selectElement.innerHTML = '<option value="">Nenhuma opção disponível.</option>';
+            return;
+        }
+
+        data.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item[valueKey];
+            option.textContent = item[textKey];
+            selectElement.appendChild(option);
+        });
     }
 
-    function loadPatientDetails() {
-        const patientData = localStorage.getItem('selectedPatient');
-        if (patientData) {
-            const patient = JSON.parse(patientData);
-
-            document.getElementById('patientName').value = patient.nome || 'Nome não disponível';
-            document.getElementById('patientDate').value = patient.dataNasc ? formatDate(patient.dataNasc) : 'Data não disponível';
-            document.getElementById('patientCpf').value = patient.CPF || 'CPF não disponível';
-        } else {
-            document.getElementById('patientName').value = 'Paciente não encontrado.';
-            document.getElementById('patientDate').value = '';
-            document.getElementById('patientCpf').value = '';
+    async function fetchData(url) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Erro ao buscar dados');
+            }
+            return await response.json();
+        } catch (error) {
+            console.error('Erro:', error);
         }
     }
 
-    function goBack() {
-        window.location.href = 'index.html';
+    async function fetchAndPopulateSelects() {
+        const [procedimentos, tipoSolicitacao, profissionais] = await Promise.all([
+            fetchData(apiUrlProcedures),
+            fetchData(apiUrlTipoSolicitacao),
+            fetchData(apiUrlProfissionais)
+        ]);
+
+        const proceduresSelect = document.getElementById('procedures');
+        const tipoSolicitacaoSelect = document.getElementById('solicitationType');
+        const profissionaisSelect = document.getElementById('professional');
+
+        populateSelect(proceduresSelect, procedimentos, 'id', 'descricao');
+        populateSelect(tipoSolicitacaoSelect, tipoSolicitacao, 'id', 'descricao');
+        populateSelect(profissionaisSelect, profissionais, 'id', 'descricao');
     }
 
-    loadPatientDetails();
+    function populatePatientDetails(patient) {
+        if (patient) {
+            document.getElementById('patientName').value = patient.nome || '';
+            document.getElementById('patientDate').value = patient.dataNasc || '';
+            document.getElementById('patientCpf').value = patient.CPF || '';
+        }
+    }
 
-    document.getElementById('back-button').addEventListener('click', goBack);
+    function loadPatientDetails() {
+        const selectedPatient = localStorage.getItem('selectedPatient');
+        if (selectedPatient) {
+            const patient = JSON.parse(selectedPatient);
+            populatePatientDetails(patient);
+        }
+    }
+
+    function setupBackButton() {
+        const backButton = document.getElementById('back-button');
+        if (backButton) {
+            backButton.addEventListener('click', () => {
+                window.location.href = 'index.html';
+            });
+        }
+    }
+
+    fetchAndPopulateSelects();
+    loadPatientDetails();
+    setupBackButton();
 });
