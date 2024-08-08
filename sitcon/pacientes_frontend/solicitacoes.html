@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacientes - Sitcon</title>
+    <title>Listagem de Solicitações - Sitcon</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
     <header>
         <div class="button-container">
             <a href="index.html">
                 <button id="btn1">Solicitações de Clínicas</button>
             </a>
-            <a href="solicitacoes.html">
+            <a href="index.html">
                 <button id="btn2">Listagem de Solicitações</button>
             </a>
         </div>
@@ -23,15 +21,17 @@
     <main>
         <div class="container">
             <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Buscar pacientes...">
+                <input type="text" id="searchInput" placeholder="Buscar solicitações...">
             </div>
             <table>
                 <thead>
                     <tr>
-                        <th>Paciente</th>
-                        <th>Data de Nascimento</th>
+                        <th>Nome Paciente</th>
                         <th>CPF</th>
-                        <th>Ações</th>
+                        <th>Tipo de Solicitação</th>
+                        <th>Procedimento(s)</th>
+                        <th>Data</th>
+                        <th>Hora</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,7 +42,6 @@
                 <span id="pageInfo">1</span>
                 <button id="nextPage">Próxima &raquo;</button>
             </div>
-            
         </div>
     </main>
 
@@ -50,7 +49,6 @@
         <p>Marcone Trajano dos Reis - 2024</p>
     </footer>
 
-    <script src="js/buscar_pacientes.js"></script>
+    <script src="js/listagem_solicitacoes.js"></script>
 </body>
-
 </html>
